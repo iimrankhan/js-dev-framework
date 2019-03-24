@@ -9,11 +9,11 @@ describe('Our first test',()=>{
 });
 
 describe('index.html',()=>{
-  it('should say working',(done)=>{
+  it('should have user table',(done)=>{
     const index = fs.readFileSync('src/index.html',"utf-8");
     jsdom.env(index, function(err, window){
       const h1 = window.document.getElementsByTagName('h1')[0];
-      expect(h1.innerHTML).to.equal("working");
+      expect(h1.innerHTML).to.equal("Users");
       done();
       window.close;
     });

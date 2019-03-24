@@ -18,6 +18,14 @@ app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
+app.get('/users', function(req, res){
+  res.json([
+    {id:1, "firstname":"Bob", "lastname":"smith", "email":"someemail"}
+  ]);
+});
+
+
+
 // routng
 app.listen(port,function(err){
   if (err){
